@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteria", "Asteria\Asteria.csproj", "{88206381-7F6F-4470-BA60-9691A38BEC3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteria", "Asteria\Asteria.csproj", "{7C978D07-FF34-4E65-AFD5-0CD657F31585}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{88206381-7F6F-4470-BA60-9691A38BEC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88206381-7F6F-4470-BA60-9691A38BEC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88206381-7F6F-4470-BA60-9691A38BEC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88206381-7F6F-4470-BA60-9691A38BEC3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C978D07-FF34-4E65-AFD5-0CD657F31585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C978D07-FF34-4E65-AFD5-0CD657F31585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C978D07-FF34-4E65-AFD5-0CD657F31585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C978D07-FF34-4E65-AFD5-0CD657F31585}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {756A9138-34D8-4796-BCE8-E06657BA637F}
+		SolutionGuid = {B4C3FA6D-D534-42E5-9FF5-E9247F30C263}
 	EndGlobalSection
 EndGlobal
