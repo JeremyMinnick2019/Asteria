@@ -1,5 +1,10 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(20);
+});
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -19,6 +24,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
