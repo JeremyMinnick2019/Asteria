@@ -1,0 +1,28 @@
+How to set up a db (DataBase-First) -> Scaffold-dbContext -Connection "Data Source=TestSource;Initial Catalog=TestCatalog;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data/TestCatalog
+                                       ^^Generates code                ^^Put in your own connection string here                                     ^^Make sure you have this nuget package            ^^ Make a Data Folder in your Project and then it will create the other folder(ex: TestCatalog)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+InvokeAsync:
+
+1. @{@await Component.InvokeAsync("TopMenu")} <-- put this in the view but replace "TopMenu" with the name of your view
+
+2. In the ViewComponents(folder located in the root of the project) add a class(example.cs) and use your "view name" + "ViewComponent". ex "TopMenuViewComponent.cs" This will act like a controller.
+Side Note: The ViewComponents folder isn't necessary for this to work but it's nice for organization.
+
+3. public class TopMenuViewComponent : ViewComponent <-- add this. You will get an error so just right click and have it add the using for you
+
+4. public IViewComponentResult Invoke() <-- Add this inside public class TopMenuViewComponent : ViewComponent. This will be the same in every ViewComponent
+   {
+   
+   }
+
+   ^^ you can treat this like a normal controller
+
+5. In Views(folder located in the root of the project) -> Shared(Folder) -> Components(Folder. If this doesn't exist create it. Name of this does matter) -> TopMenu(Folder. Name this your views Name. TopMenu is an example ) -> Default.cshtml(This will always be called Default)
+
+6. You are done.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
