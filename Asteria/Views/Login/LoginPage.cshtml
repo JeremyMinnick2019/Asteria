@@ -20,7 +20,9 @@
 
 <script>
     $('#Submit').click(function() {
-        const apiKey = $('#APIKEY').val();
+        const apiInput = $("#APIKEY")
+        const inputInfo = $("#InputInfo")
+        const apiKey = apiInput.val();
         console.log(apiKey);
 
         $.get('@Url.Action("LoginVerification","Login")', { APIKey: apiKey }, function(response) {
@@ -28,9 +30,6 @@
                 window.location.href = '@Url.Action("index","Home")'
             }
             else {
-                // is-invalid
-                const apiInput = $("#APIKEY")
-                const inputInfo = $("#InputInfo")
                 apiInput.addClass('is-invalid')
                 inputInfo.addClass('invalid-feedback')
                 inputInfo.text('That key is invalid please try again')
