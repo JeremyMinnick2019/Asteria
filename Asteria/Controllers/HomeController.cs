@@ -17,9 +17,7 @@ namespace Asteria.Controllers
             {
                 return Redirect(Url.Action("LoginPage", "Login"));
             }
-
             return View();
         }
-
     }
 }
