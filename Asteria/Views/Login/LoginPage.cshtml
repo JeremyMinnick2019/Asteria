@@ -1,0 +1,38 @@
+﻿<link rel="stylesheet" href="~/Asteria.styles.css" asp-append-version="true" />
+
+<div class="d-flex justify-content-center login-card">
+    <div class="card card-size">
+        <div class="card-header">
+            Login
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="text-white form-label" for="APIKEY">NASA API Key</label>
+                <input class="form-control" id="APIKEY" placeholder="Enter API Key" />
+                <div class="form-text" id="InputInfo">Asteria only keeps it for the duration of your session.</div>
+            </div>
+            <button id="Submit" type="submit" class="btn btn-light">Submit</button>
+            <div class="w-100"></div>
+            <div class="form-text text-white mt-2">If you don't have an API Key you go here: <a href="https://api.nasa.gov/" target="_blank">https://api.nasa.gov/</a></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#Submit').click(function() {
+        const apiInput = $("#APIKEY")
+        const inputInfo = $("#InputInfo")
+        const apiKey = apiInput.val();
+
+        $.get('@Url.Action("LoginVerification","Login")', { APIKey: apiKey }, function(response) {
+            if (response.response) {
+                window.location.href = '@Url.Action("index","Home")'
+            }
+            else {
+                apiInput.addClass('is-invalid')
+                inputInfo.addClass('invalid-feedback')
+                inputInfo.text('That key is invalid please try again')
+            }
+        });
+    });
+</script>

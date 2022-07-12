@@ -1,4 +1,5 @@
-﻿using Asteria.Models;
+﻿using Asteria.Classes;
+using Asteria.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,27 +7,17 @@ namespace Asteria.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
         }
 
         public IActionResult Index()
         {
+            if (!HttpContext.Session.TryGetValue("IsLoggIn", out var Hold) || !HttpContext.Session.Get<bool>("IsLoggIn"))
+            {
+                return Redirect(Url.Action("LoginPage", "Login"));
+            }
             return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
