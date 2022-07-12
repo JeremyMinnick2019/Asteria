@@ -7,6 +7,11 @@ namespace Asteria.Controllers
     {
         public IActionResult LoginPage()
         {
+            if (HttpContext.Session.TryGetValue("IsLoggIn", out var Hold))
+            {
+                return Redirect(Url.Action("index", "Home"));
+            }
+
             return View();
         }
 
@@ -20,7 +25,7 @@ namespace Asteria.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                HttpContext.Session.Set<bool?>("IsLoggIn", true);
+                HttpContext.Session.Set<bool>("IsLoggIn", true);
                 HttpContext.Session.Set("APIKey", APIKey);
                 return Json(new { response = true });
             }
