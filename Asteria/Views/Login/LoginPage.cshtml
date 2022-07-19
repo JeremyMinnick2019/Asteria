@@ -23,7 +23,6 @@
         const apiInput = $("#APIKEY")
         const inputInfo = $("#InputInfo")
         const apiKey = apiInput.val();
-        console.log(apiKey);
 
         $.get('@Url.Action("LoginVerification","Login")', { APIKey: apiKey }, function(response) {
             if (response.response) {
