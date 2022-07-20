@@ -1,8 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model APOD
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @{
+        string base64 = Convert.ToBase64String(Model.Hdurl ?? new byte[0]);
+        string ImgSRC = String.Format($"data:image/jpeg;base64,{base64}");
+        <img class="border-radius" style="width: 275px; height: 275px; overflow:hidden;" src="@ImgSRC">
+    }
 </div>
