@@ -3,7 +3,6 @@ using Asteria.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Newtonsoft.Json.Linq;
-using Asteria.Models;
 
 namespace Asteria.Controllers
 {
@@ -17,7 +16,7 @@ namespace Asteria.Controllers
         {
             if (!HttpContext.Session.TryGetValue("IsLoggIn", out var Hold) || !HttpContext.Session.Get<bool>("IsLoggIn"))
             {
-                return Redirect(Url.Action("LoginPage", "Login"));
+                return Redirect(Url.Action("LoginPage", "Login") ?? Constants.ErrorRoute);
             }
 
             APOD PictureOfTheDayValue = GetPictureOfTheDay();

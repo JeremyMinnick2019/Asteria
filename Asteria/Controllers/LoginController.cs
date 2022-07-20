@@ -9,7 +9,7 @@ namespace Asteria.Controllers
         {
             if (HttpContext.Session.TryGetValue("IsLoggIn", out var Hold) && HttpContext.Session.Get<bool>("IsLoggIn"))
             {
-                return Redirect(Url.Action("Index", "Home"));
+                return Redirect(Url.Action("Index", "Home") ?? Constants.ErrorRoute);
             }
 
             return View();
