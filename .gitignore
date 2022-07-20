@@ -522,6 +522,10 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
+#Mac
+
+.DS_Store
+
 # JetBrains Rider
 
 ### VisualStudio ###
