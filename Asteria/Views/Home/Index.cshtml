@@ -4,6 +4,17 @@
     @{
         string base64 = Convert.ToBase64String(Model.Hdurl ?? new byte[0]);
         string ImgSRC = String.Format($"data:image/jpeg;base64,{base64}");
-        <img class="border-radius" style="width: 275px; height: 275px; overflow:hidden;" src="@ImgSRC">
+        
+        <div class="d-flex justify-content-center login-card">
+            <div class="card card-size">
+                <div class="card-header">
+                    @Model.Title @Model.CopyRight @Model.Date
+                </div>
+                <div class="card-body">
+                    <img class="ImageSize" src="@ImgSRC">
+                    <p>@Model.Explanation</p>
+                </div>
+            </div>
+        </div>
     }
 </div>
