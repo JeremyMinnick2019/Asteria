@@ -1,14 +1,25 @@
-﻿@model APOD
+﻿<link rel="stylesheet" href="~/Asteria.styles.css" asp-append-version="true" />
+@model APOD
 
 <div class="text-center">
     @{
         string base64 = Convert.ToBase64String(Model.Hdurl ?? new byte[0]);
         string ImgSRC = String.Format($"data:image/jpeg;base64,{base64}");
         
-        <div class="d-flex justify-content-center login-card">
+        <div class="d-flex justify-content-center login-card mt-lg-4">
             <div class="card card-size">
                 <div class="card-header">
-                    @Model.Title @Model.CopyRight @Model.Date
+                    <ul class="list-unstyled">
+                        <li>
+                            @Model.Title
+                        </li>
+                        <li>
+                            @Model.CopyRight
+                        </li>
+                        <li>
+                            @Model.Date
+                        </li>
+                    </ul>
                 </div>
                 <div class="card-body">
                     <img class="ImageSize" src="@ImgSRC">
