@@ -43,7 +43,7 @@ namespace Asteria.Controllers
             APOD APODInfo = new APOD()
             {
                 CopyRight = (string?)PicOfDayObj["copyright"],
-                Date = (string?)PicOfDayObj["date"],
+                Date = (string?)PicOfDayObj["date"] ?? "",
                 Explanation = (string?)PicOfDayObj["explanation"],
                 Hdurl = PhotoLinkToByteArray((string?)PicOfDayObj["hdurl"]),
                 MediaType = (string?)PicOfDayObj["media_type"],

@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-center login-card mt-lg-4">
             <div class="card card-size">
                 <div class="card-header">
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled mb-0">
                         <li>
                             @Model.Title
                         </li>
@@ -22,8 +22,10 @@
                     </ul>
                 </div>
                 <div class="card-body">
-                    <img class="ImageSize" src="@ImgSRC">
-                    <p>@Model.Explanation</p>
+                    <a href="@ImgSRC" download="PhotoOfTheDate">
+                        <img class="ImageSize" src="@ImgSRC">
+                    </a>
+                    <p class="pt-2">@Model.Explanation</p>
                 </div>
             </div>
         </div>
