@@ -26,3 +26,8 @@ Side Note: The ViewComponents folder isn't necessary for this to work but it's n
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+dotnet-aspnet-codegenerator -p . controller -name MyDemoModelController -outDir Controllers
+dotnet-aspnet-codegenerator -p . view test Empty -outDir Views/Home
